@@ -1,0 +1,12 @@
+# 軽量な Alpine Linux ベース
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN  npm ci --omit=dev
+
+COPY app.js ./
+
+EXPOSE 3000
+CMD  ["node", "app.js"]
