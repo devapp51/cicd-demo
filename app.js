@@ -9,6 +9,9 @@ app.get('/', (req, res) => {
     version: process.env.APP_VERSION || 'dev',
     timestamp: new Date().toISOString(),
   });
+
+app.get('/version', (req, res) => res.json({ version: process.env.APP_VERSION }));
+
 });
 
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
