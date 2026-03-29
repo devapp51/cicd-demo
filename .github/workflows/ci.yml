@@ -3,7 +3,6 @@ name: CI / Build & Push
 on:
   push:
     branches: ["main"]       # main push → テストのみ実行
-  push:
     tags: ["v*.*.*"]        # タグ push → ビルド+イメージ push まで実行
   pull_request:
     branches: ["main"]       # PR → テストのみ実行
